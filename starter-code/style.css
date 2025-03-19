@@ -42,6 +42,7 @@
     line-height: 100%;
     letter-spacing: -1px;
     font-family: "DM Sans, Bold";
+    margin: 0;
 }
 
 .text-preset-1-mobile {
@@ -115,20 +116,21 @@ body {
     align-items: center;
 }
 
-.theme-container {
+#theme-container {
     display: flex;
-    width: 3.44%;
+    width: 2.44%;
     height: 100%;
     justify-content: center;
     align-items: center;
     background-color: var(--neutral800);
     border-radius: .3rem;
+    border: none;
 }
 
 .header-container {
     display: flex;
     width: 100%;
-    height: 4.07%;
+    height: 10.07%;
     justify-content: center;
     align-items: center;
     color: var(--neutral100);
@@ -147,7 +149,7 @@ body {
 
 #mainInput {
     display: flex;
-    width: 96%;
+    width: 98.5%;
     height: 84.38%;
     justify-content: center;
     align-items: center;
@@ -156,6 +158,8 @@ body {
     border-radius: .7rem;
     color: var(--neutral200);
     padding: 20px;
+    resize: none;
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 #mainInput:focus {
@@ -179,15 +183,15 @@ body {
     display: flex;
     width: 32.12%;
     height: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .exclude-spaces-container {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 17.33%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -196,10 +200,35 @@ body {
 .set-character-limit-container {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 21.33%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
+}
+
+.character-textarea-container {
+    display: flex;
+    flex-direction: row;
+    width: 33.33%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    visibility: hidden;
+}
+
+#characterLimitTextArea {
+    display: flex;
+    width: 45px;
+    height: 35%;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: var(--neutral200);
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.5;
+    overflow: hidden;
+    resize: none;
 }
 
 .checkbox-preset-1 {
@@ -237,16 +266,125 @@ body {
     height: 35.21%;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 2.4%;
 }
 
-.stat-containers {
+.character-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 32.25%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 20%;
+    background-color: var(--purple500);
+    border-radius: 1rem;
+}
+
+.character-count-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    margin: 0;
+}
+
+.character-design-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    background: none;
+    overflow: hidden;
+}
+
+.character-design-container img {
+    height: 100%;
+    margin-right: -2.3rem;
+}
+
+.word-container {
+    display: flex;
+    flex-direction: row;
+    width: 32.25%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--yellow500);
+    border-radius: 1rem;
+}
+
+.word-count-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    margin: 0;
+}
+
+.word-design-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    background: none;
+    overflow: hidden;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.word-design-container img {
+    height: 100%;
+    margin-right: -2.3rem;
+}
+
+.sentence-container {
+    display: flex;
+    flex-direction: row;
+    width: 32.25%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--orange500);
+    border-radius: 1rem;
+}
+
+.sentence-count-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    margin: 0;
+}
+
+.sentence-design-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    background: none;
+    overflow: hidden;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.sentence-design-container img {
+    height: 100%;
+    margin-right: -2.3rem;
 }
 
 .density-container {
@@ -255,5 +393,147 @@ body {
     width: 100%;
     height: 59.15%;
     justify-content: flex-start;
+    align-items: baseline;
+}
+
+.density-container h3 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 12.3%;
+    color: var(--neutral200);
+    margin: 0;
+}
+
+.letter-density-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 87.7%;
+    justify-content: flex-start;
     align-items: center;
 }
+
+.letter-density-showcase-container {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.letter-container {
+    display: flex;
+    width: 5%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: var(--neutral200);
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph {
+    display: flex;
+    width: 95%;
+    height: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--neutral800);
+    border-radius: 20px;
+}
+
+.graph-percentage {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: var(--purple400);
+    border-radius: 20px;
+}
+
+.percentage-container {
+    display: flex;
+    width: 5%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: var(--neutral200);
+}
+
+@keyframes shake-horizontal {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateX(10px);
+    }
+    80% {
+      transform: translateX(8px);
+    }
+    90% {
+      transform: translateX(-8px);
+    }
+  }
+
+/* Fade-in animation with smoother easing */
+.fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.95); /* Add slight scaling */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+/* Optionally, stagger the fade-ins for smoother transitions */
+.fade-in-staggered {
+    animation: fade-in 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+.fade-in-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in-delay-3 {
+    animation-delay: 0.6s;
+}
+
+/* Example for smaller scaling on background color change */
+.fade-in-slow {
+    animation: fade-in 2s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+
+  

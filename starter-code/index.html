@@ -5,42 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Character Counter</title>
   <link rel="stylesheet" href="style.css">
+  <script src="./script.js"></script>
 </head>
 <body>
   <div class="content-container">
     <nav class="navbar-container">
       <div class="logo-container">
-        <img src="./assets/images/logo-dark-theme.svg" alt="" srcset="">
+        <img src="./assets/images/logo-dark-theme.svg" alt="" srcset="" id="themeLogo">
       </div>
-      <div class="theme-container">
-        <img src="./assets/images/icon-sun.svg" alt="" srcset="">
-      </div>
+      <button id="theme-container">
+        <img src="./assets/images/icon-sun.svg" alt="" srcset="" id="themeIcon">
+      </button>
     </nav>
-    <h1 class="header-container text-preset-1">Analyze your text <br> in real-time.</h1>
+    <h1 class="header-container text-preset-1" id="header-container">Analyze your text <br> in real-time.</h1>
     <div class="main-container">
       <textarea name="mainInput" id="mainInput" placeholder="Start typing here… (or paste your text)" class="text-preset-3"></textarea>
       <div class="options-container">
         <div class="exclude-options-container">
           <div class="exclude-spaces-container">
             <input type="checkbox" name="excludeSpaces" id="excludeSpaces" class="checkbox-preset-1">
-            <p class="text-preset-4">Exclude Spaces</p>
+            <p class="text-preset-4" id="spaceExclude">Exclude Spaces</p>
           </div>
           <div class="set-character-limit-container">
             <input type="checkbox" name="setCharacterLimit" id="setCharacterLimit" class="checkbox-preset-1">
-            <p class="text-preset-4">Set Character Limit</p>
+            <p class="text-preset-4" id="limitCharacter">Set Character Limit</p>
+          </div>
+          <div class="character-textarea-container">
+            <textarea name="characterLimit" id="characterLimitTextArea" class="text-preset-4"></textarea>
           </div>
         </div>
-        <p class="text-preset-4">Approx. reading time: 0 minutes</p>
+        <p class="text-preset-4" id="reading-time-estimate">Approx: 0 minutes</p>
       </div>
     </div>
     <div class="stats-container">
       <div class="stats-info-container">
-        <div class="stat-containers"></div>
-        <div class="stat-containers"></div>
-        <div class="stat-containers"></div>
+        <div class="character-container">
+          <div class="character-count-container">
+            <p class="text-preset-1" id="character-count">00</p>
+            <p class="text-preset-4">Total Characters</p>
+          </div>
+          <div class="character-design-container">
+            <img src="./assets/images/pattern-character-count.svg" alt="" srcset="">
+          </div>
+        </div>
+        <div class="word-container">
+          <div class="word-count-container">
+            <p class="text-preset-1" id="word-count">00</p>
+            <p class="text-preset-4">Total Words</p>
+          </div>
+          <div class="word-design-container">
+            <img src="./assets/images/pattern-word-count.svg" alt="" srcset="">
+          </div>
+        </div>
+        <div class="sentence-container">
+          <div class="sentence-count-container">
+            <p class="text-preset-1" id="sentence-count">00</p>
+            <p class="text-preset-4">Total Sentences</p>
+          </div>
+          <div class="sentence-design-container">
+            <img src="./assets/images/pattern-sentence-count.svg" alt="" srcset="">
+          </div>
+        </div>
       </div>
-      <div class="density-container"></div>
+      <div class="density-container">
+        <h3 class="text-preset-2" id="densityHeader">Letter Density</h3>
+        <div class="letter-density-container">
+          <div class="letter-density-showcase-container">
+            <div class="letter-container text-preset-4">E</div>
+            <div class="graph-container">
+              <div class="graph">
+                <div class="graph-percentage"></div>
+              </div>
+            </div>
+            <div class="percentage-container text-preset-4">40%</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+<script src="./theme.js"></script>
 </body>
 </html>
