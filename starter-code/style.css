@@ -71,17 +71,19 @@
     line-height: 130%;
     letter-spacing: -0.6px;
     font-family: "DM Sans, Regular";
+    margin: 0;
 }
 
 body {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 125vh;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
     background-color: var(--neutral900);
+    overflow-x: hidden;
 }
 
 .content-container {
@@ -104,8 +106,8 @@ body {
 }
 
 .navbar-container img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .logo-container {
@@ -118,7 +120,7 @@ body {
 
 #theme-container {
     display: flex;
-    width: 2.44%;
+    width: 3.3%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -130,7 +132,7 @@ body {
 .header-container {
     display: flex;
     width: 100%;
-    height: 10.07%;
+    height: 14.07%;
     justify-content: center;
     align-items: center;
     color: var(--neutral100);
@@ -149,7 +151,7 @@ body {
 
 #mainInput {
     display: flex;
-    width: 98.5%;
+    width: 96.5%;
     height: 84.38%;
     justify-content: center;
     align-items: center;
@@ -181,7 +183,7 @@ body {
 
 .exclude-options-container {
     display: flex;
-    width: 32.12%;
+    width: 72.12%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -191,19 +193,21 @@ body {
 .exclude-spaces-container {
     display: flex;
     flex-direction: row;
-    width: 17.33%;
+    width: 18.33%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .set-character-limit-container {
     display: flex;
     flex-direction: row;
-    width: 21.33%;
+    width: 22.33%;
     height: 100%;
     justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .character-textarea-container {
@@ -289,6 +293,7 @@ body {
     align-items: center;
     background: none;
     margin: 0;
+    gap: 0.3rem;
 }
 
 .character-design-container {
@@ -300,11 +305,13 @@ body {
     align-items: center;
     background: none;
     overflow: hidden;
+    border-radius: 16px;
 }
 
 .character-design-container img {
+    width: 100%;
     height: 100%;
-    margin-right: -2.3rem;
+    margin-right: -2.8rem;
 }
 
 .word-container {
@@ -344,7 +351,7 @@ body {
 
 .word-design-container img {
     height: 100%;
-    margin-right: -2.3rem;
+    margin-right: -1.3rem;
 }
 
 .sentence-container {
@@ -384,7 +391,7 @@ body {
 
 .sentence-design-container img {
     height: 100%;
-    margin-right: -2.3rem;
+    margin-right: -1.7rem;
 }
 
 .density-container {

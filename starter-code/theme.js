@@ -1,14 +1,12 @@
 document.getElementById('theme-container').addEventListener('click', function() {
     const rootStyles = getComputedStyle(document.documentElement);
 
-    // Get the background colors in RGB format (computed values)
     const neutral0 = rootStyles.getPropertyValue('--neutral0').trim();
     const neutral900 = rootStyles.getPropertyValue('--neutral900').trim();
     const neutral100 = rootStyles.getPropertyValue('--neutral100').trim();
     const neutral200 = rootStyles.getPropertyValue('--neutral200').trim();
     const neutral700 = rootStyles.getPropertyValue('--neutral700').trim();
 
-    // Function to convert hex to rgb
     function hexToRgb(hex) {
         var r = parseInt(hex.slice(1, 3), 16);
         var g = parseInt(hex.slice(3, 5), 16);
@@ -16,23 +14,21 @@ document.getElementById('theme-container').addEventListener('click', function() 
         return `rgb(${r}, ${g}, ${b})`;
     }
 
-    // Convert the neutral colors from hex to rgb for comparison
     const neutral0Rgb = hexToRgb(neutral0);
     const neutral900Rgb = hexToRgb(neutral900);
 
-    // Get the current background color of the body
     const currentBgColor = document.body.style.backgroundColor || getComputedStyle(document.body).backgroundColor;
 
-    // Function to add fade-in class with optional staggered delays
     function addFadeInClass(element, delayClass) {
+        element.classList.remove('fade-in', delayClass); // Remove existing animation classes
+        void element.offsetWidth; // Trigger reflow to restart animation
         element.classList.add('fade-in', delayClass);
         element.addEventListener('animationend', function() {
-            element.classList.remove('fade-in', delayClass); // Clean up after animation
+            element.classList.remove('fade-in', delayClass);
         });
     }
 
     if (currentBgColor === neutral0 || currentBgColor === neutral0Rgb) {
-        // Switch to dark theme
         document.body.style.backgroundColor = neutral900;
         addFadeInClass(document.body, 'fade-in-delay-1');
 
@@ -67,7 +63,6 @@ document.getElementById('theme-container').addEventListener('click', function() 
         document.getElementById('theme-container').style.backgroundColor = neutral700;
         addFadeInClass(document.getElementById('theme-container'), 'fade-in-delay-1');
     } else {
-        // Switch to light theme
         document.body.style.backgroundColor = neutral0;
         addFadeInClass(document.body, 'fade-in-delay-1');
 
